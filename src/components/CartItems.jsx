@@ -13,7 +13,7 @@ function CartItems( {addCartItem, removeCartItems, setShowCart} ){
                 </h2>
                 <p className="text-gray-300 mb-8 text-lg">See what you have picked</p>
                 <button 
-                className="mt-4 w-32 bg-blue-500 text-white py-2 rounded-lg font-semibold shadow hover:bg-blue-600 focus:ring-2 focus:ring-blue-300 transition-all duration-150 flex items-center justify-center gap-2"
+                className="mt-4 w-64 bg-blue-500 text-white py-2 rounded-lg font-semibold shadow hover:bg-blue-600 focus:ring-2 focus:ring-blue-300 transition-all duration-150 flex items-center justify-center gap-2"
                 onClick={() => setShowCart(false)}
             >
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-white">
