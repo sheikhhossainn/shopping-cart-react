@@ -1,0 +1,38 @@
+function CartItems( {addCartItem, removeCartItems, setShowCart} ){
+    return(
+        <>
+            <div className="min-h-screen bg-gray-950 px-8 py-10">
+                <h2 className="text-4xl font-extrabold text-white mb-2">🛒 Cart</h2>
+                <p className="text-gray-400 mb-8">See what you have picked</p>
+                <button 
+                className="mt-4 w-half bg-indigo-600 text-white py-2 rounded-xl font-semibold hover:cursor-pointer hover:bg-indigo-500 active:scale-95 transition-all duration-150"
+                onClick={() => setShowCart(false)}
+            >
+                🛒 Go to Shopping
+            </button>
+
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                    {addCartItem.map((item) =>(
+                        <div key={item.id} className="bg-gray-900 rounded-2xl overflow-hidden border border-gray-800 hover:border-indigo-500 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/20">
+                            <img src={item.image} alt={item.name} className="w-full h-48 object-cover"/>
+                            
+                            <div className="p-4">
+                                <h2 className="text-white text-lg font-bold">{item.name}</h2>
+                                <p className="text-gray-400 text-sm mt-1">{item.description}</p>
+                                <p className="text-indigo-400 font-extrabold text-xl mt-3">${item.price}</p>
+                                <button 
+                                    className="mt-4 w-full bg-indigo-600 text-white py-2 rounded-xl font-semibold hover:cursor-pointer hover:bg-indigo-500 active:scale-95 transition-all duration-150"
+                                    onClick={() => removeCartItems(item)}
+                                >
+                                    Remove Item
+                                </button>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </>
+    )
+}
+
+export default CartItems
