@@ -1,7 +1,7 @@
-import appleImage from '../assets/apple_image.jpg'
-import mangoImage from '../assets/mango_image.jpg'
-import watermelonImage from '../assets/watermelon_image.jpg'
-import strawberryImage from '../assets/strawberry_image.jpg'
+import appleImage from '../assets/fruits/apple_image.jpg'
+import mangoImage from '../assets/fruits/mango_image.jpg'
+import watermelonImage from '../assets/fruits/watermelon_image.jpg'
+import strawberryImage from '../assets/fruits/strawberry_image.jpg'
 
 const itemLists = [
     {
