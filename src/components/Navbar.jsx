@@ -1,15 +1,26 @@
 import Logo from "../assets/fruits-logo.png"
 import Logout from "../assets/logout-icon.png"
+import Settings from "../assets/settings.png"
+import { useNavigate } from "react-router-dom"
 import { useState } from "react"
 
 function Navbar({ currentUser, handleLogout }) {
 
     const [showDropdown, setShowDropdown] = useState(false)
+    const navigate = useNavigate()
 
     return (
         <nav className="bg-gray-900 border-b border-gray-800 px-8 py-4 flex justify-between items-center">
             <div className="flex flex-col">
-                <img src={Logo} className="h-12 object-contain invert" />
+                <img 
+                    src={Logo} 
+                    className="h-12 object-contain invert hover:cursor-pointer" 
+                    onClick={() =>{
+                        navigate('/')
+                    }
+                }
+                
+                />
                 <p className="text-gray-400 text-xs">Eat fresh fruits</p>
             </div>
 
@@ -34,11 +45,24 @@ function Navbar({ currentUser, handleLogout }) {
                         </div>
 
                         <button
-                            className="flex items-center gap-2 text-red-400 px-3 py-2 hover:bg-gray-700 rounded-lg w-full text-sm"
+                            className="flex items-center gap-2 text-gray-400 px-2 py-2 hover:bg-gray-700 rounded-lg w-full text-sm"
+                            onClick={() => {
+                                navigate('/settings')
+                                setShowDropdown(false)
+                            }}
+                        >
+                            <img src={Settings} className="invert h-4 object-contain"/>
+                            Settings
+                        </button>
+
+                        <button
+                            className="flex items-center gap-2 text-red-400 px-2.5 py-2 hover:bg-gray-700 rounded-lg w-full text-sm"
                             onClick={handleLogout}
                         >
                             <img src={Logout} className="invert h-3 object-contain"/>
+                            Logout
                         </button>
+                        
                     </div>
                 }
             </div>

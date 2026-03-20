@@ -12,6 +12,7 @@ function Login({ setIsLoggedIn, setCurrentUser }){
         if(user){
             setIsLoggedIn(true)
             setCurrentUser(user)
+            localStorage.setItem("user", JSON.stringify(user)) // save the user in browser storage
             toast.success(`Welcome back ${user.name}!`)
         } else {
             toast.error("Invalid email or password!")

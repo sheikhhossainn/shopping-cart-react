@@ -1,10 +1,12 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 import toast from 'react-hot-toast'
 import ShoppingBag from '../assets/shopping-bag.png'
 import ShoppingCart from '../assets/shopping-cart.png'
 
-function Items({ items, addToCart, setShowCart }){
+function Items({ items, addToCart }){
     const[clickedId, setClickedId] = useState(null) //Because each item button should have a different state to change it's color
+    const navigate = useNavigate()
 
     return(
         <div className="min-h-screen bg-neutral-900 px-8 py-10 font-sans">
@@ -17,7 +19,7 @@ function Items({ items, addToCart, setShowCart }){
             <p className="text-gray-300 mb-8 text-lg">Hand picked items just for you</p>
             <button 
                 className="mt-4 w-32 bg-blue-500 text-white py-2 rounded-lg font-semibold shadow hover:bg-blue-600 focus:ring-2 focus:ring-blue-300 transition-all duration-150 flex items-center justify-center gap-2"
-                onClick={() => setShowCart(true)}
+                onClick={() => navigate('/cart')}
             >
                 <img src={ShoppingCart} className="object-contain h-6 invert"/>
                 Go to Cart

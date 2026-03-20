@@ -1,6 +1,9 @@
 import ShoppingCart from '../assets/shopping-cart.png'
+import { useNavigate } from 'react-router-dom'
 
 function CartItems({ addCartItem, removeCartItems, setShowCart }) {
+
+    const navigate = useNavigate()
     return (
         <>
             <div className="min-h-screen bg-neutral-900 px-8 py-10 font-sans">
@@ -17,10 +20,12 @@ function CartItems({ addCartItem, removeCartItems, setShowCart }) {
                 
                 <button
                     className="mt-4 w-64 bg-blue-500 text-white py-2 rounded-lg font-semibold shadow hover:bg-blue-600 focus:ring-2 focus:ring-blue-300 transition-all duration-150 flex items-center justify-center gap-2"
-                    onClick={() => setShowCart(false)}
+                    onClick={() => 
+                        navigate('/shop')
+                    }
                 >
                     <img src={ShoppingCart} className='object-contain invert h-6' />
-                    Go to Shopping
+                    Back to Shopping
                 </button>
 
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
